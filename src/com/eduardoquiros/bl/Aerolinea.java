@@ -5,15 +5,17 @@ import java.awt.image.BufferedImage;
 public class Aerolinea {
     private String cedulaJuridica, nombreComercial,nombreEmpresaDuenna;
     private BufferedImage logo;
+    private Pais pais;
 
     public Aerolinea() {
     }
 
-    public Aerolinea(String cedulaJuridica, String nombreComercial, String nombreEmpresaDuenna, BufferedImage logo) {
+    public Aerolinea(String cedulaJuridica, String nombreComercial, String nombreEmpresaDuenna, BufferedImage logo, Pais pais) {
         this.cedulaJuridica = cedulaJuridica;
         this.nombreComercial = nombreComercial;
         this.nombreEmpresaDuenna = nombreEmpresaDuenna;
         this.logo = logo;
+        this.pais = pais;
     }
 
     public String getCedulaJuridica() {
@@ -48,6 +50,14 @@ public class Aerolinea {
         this.logo = logo;
     }
 
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,6 +76,7 @@ public class Aerolinea {
                 ", nombreComercial='" + nombreComercial + '\'' +
                 ", nombreEmpresaDuenna='" + nombreEmpresaDuenna + '\'' +
                 ", logo=" + logo +
+                ", pais=" + pais.toString() +
                 '}';
     }
 }
