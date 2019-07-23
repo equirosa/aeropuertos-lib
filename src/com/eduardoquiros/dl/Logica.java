@@ -3,10 +3,7 @@ package com.eduardoquiros.dl;
 import com.eduardoquiros.bl.Pais;
 import com.eduardoquiros.bl.Persona;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Logica {
@@ -37,6 +34,26 @@ public class Logica {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void guardar(Pais tmpPais){
+        try {
+            crearArchivoPaises();
+            BufferedWriter buffer = new BufferedWriter(new FileWriter(PAISES,true));
+
+            buffer.write(tmpPais.stringToCSV());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void crearArchivoPaises() {
+        File paises = new File(PAISES);
+        try {
+            paises.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
