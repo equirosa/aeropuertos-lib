@@ -55,4 +55,8 @@ public class Pais {
                 ", abreviatura='" + abreviatura + '\'' +
                 '}';
     }
+
+    public String stringToCSV(){
+        return codigo+","+nombre+","+abreviatura;
+    }
 }
