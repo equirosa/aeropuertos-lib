@@ -1,7 +1,6 @@
 package com.eduardoquiros.dl;
 
 import com.eduardoquiros.bl.Pais;
-import com.eduardoquiros.bl.Persona;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class Logica {
         }
     }
 
-    private void guardar(Pais tmpPais){
+    public void guardar(Pais tmpPais){
         try {
             crearArchivoPaises();
             BufferedWriter buffer = new BufferedWriter(new FileWriter(PAISES,true));
