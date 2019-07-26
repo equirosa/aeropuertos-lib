@@ -67,4 +67,8 @@ public class Logica {
         }
         return false;
     }
+
+    public void registrarAdmin(Admin tmpAdmin) {
+        administradores.add(tmpAdmin);
+    }
 }
