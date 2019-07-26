@@ -17,8 +17,8 @@ public class Gestor {
     //Convierte los datos en Admin y envia a CL.
     public void registrarAdmin(String[] infoPersona, char infoAdmin) {
         Admin tmpAdmin = new Admin(infoPersona[0],infoPersona[1],infoPersona[2],infoPersona[3],infoPersona[4],
-                infoPersona[5],CL.buscarPaisPorCodigo(infoPersona[9]), LocalDate.of((Integer.parseInt(infoPersona[6]),Integer.parseInt(infoPersona[7]),
-                Integer.parseInt(infoPersona[8])), infoAdmin);
+                infoPersona[5],CL.buscarPaisPorCodigo(infoPersona[9]), LocalDate.of((Integer.parseInt(infoPersona[6])),
+                Integer.parseInt(infoPersona[7]),Integer.parseInt(infoPersona[8])), infoAdmin);
         CL.registrarAdmin(tmpAdmin);
     }
 
