@@ -61,14 +61,25 @@ public class Main {
         }
     }
 
-//    Procesa el objeto que se desea registrar.
+////    Procesa que objeto el usuario desea listar.
+//    private static void listarObjeto(int opcionObjetos) {
+//        switch (opcionObjetos){
+//            default:
+//                out.println("Opcion invalida...");
+//                break;
+//            case 1:
+//                listarAdmin
+//        }
+//    }
+
+    //    Procesa el objeto que se desea registrar.
     private static void registrarObjeto(int opcionObjetos) {
         switch (opcionObjetos){
             default:
                 out.println("Opcion invalida.");
                 break;
             case 1:
-                registrarAdmin();
+                registrarUsuarios();
                 break;
             case 2:
                 registrarPais();
