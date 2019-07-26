@@ -20,4 +20,8 @@ public class Gestor {
                 Integer.parseInt(infoPersona[8])), infoAdmin);
         CL.registrarAdmin(tmpAdmin);
     }
+
+    public boolean verificarExistenciaAdmin() {
+        return CL.verificarExistenciaAeropuerto();
+    }
 }

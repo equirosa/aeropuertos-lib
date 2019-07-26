@@ -23,4 +23,7 @@ public class Logica {
     public void registrarAdmin(Admin tmpAdmin) {
         administradores.add(tmpAdmin);
     }
+
+    public boolean verificarExistenciaAeropuerto() {
+    }
 }
