@@ -27,6 +27,19 @@ public class Main {
         }while(!(verificarExistenciaAdmin()));
     }
 
+    private static void solicitarPrimerAeropuerto() {
+        out.println("Actualmente, no hay nignun aeropuerto registrado.\n" +
+                "Desea registrar uno?");
+        try{
+            if(in.readLine().toLowerCase().charAt(0) == 'y' || in.readLine().equals(null)){
+                registrarAeropuerto();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static int mostraMenuPrincipal() {
         out.println("Menu Principal \n" +
                 "Seleccione una opcion... \n" +
