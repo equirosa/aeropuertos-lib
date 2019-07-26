@@ -61,7 +61,42 @@ public class Main {
         }
     }
 
-//    Procesa que objeto el usuario desea listar.
+    private static void modificarObjeto(int opcionObjetos) {
+        switch (opcionObjetos){
+            default:
+                out.println("Opcion invalida...");
+                break;
+            case 1:
+                modificarUsuario();
+                break;
+            case 2:
+                modificarPais();
+                break;
+            case 3:
+                modificarAeropuerto();
+                break;
+            case 4:
+                modificarAerolinea();
+                break;
+            case 5:
+                modificarTripulacion();
+                break;
+            case 6:
+                modificarUbicacion();
+                break;
+            case 7:
+                modificarPuerta();
+                break;
+            case 8:
+                modificarAvion();
+                break;
+            case 9:
+                modifcarVuelo();
+                break;
+        }
+    }
+
+    //    Procesa que objeto el usuario desea listar.
     private static void listarObjeto(int opcionObjetos) {
         switch (opcionObjetos){
             default:
