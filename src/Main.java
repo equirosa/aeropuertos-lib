@@ -20,7 +20,8 @@ public class Main {
     }
 
     private static void solicitarPrimerAdmin() {
-
+        out.println("El sistema, acutalmente, no tiene ningun administrador registrado. " +
+                "\n Por favor registre uno.");
     }
 
     private static boolean verificarExistenciaAdmin() {
