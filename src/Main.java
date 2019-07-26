@@ -61,6 +61,7 @@ public class Main {
         }
     }
 
+//    Procesa el objeto que se desea registrar.
     private static void registrarObjeto(int opcionObjetos) {
         switch (opcionObjetos){
             default:
