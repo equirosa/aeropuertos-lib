@@ -39,9 +39,16 @@ public class Main {
 
     //Esta funcion solicita la informacion pertinente al usuario tipo Admin.
     private static char solicitarInfoAdmin() {
-        char genero;
+        char genero = 0;
 
-        out.println("Ingrese el ");
+        out.println("Ingrese el genero. (M/F/O)");
+        try {
+            genero = in.readLine().charAt(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return genero;
     }
 
     //Esta funcion le pide alusuario la informacion basica de toda Persona, exceptuando la contrasenna.
