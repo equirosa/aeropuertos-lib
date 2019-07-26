@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Logica {
     private double impuesto;
-    private ArrayList<Admin> administradores = new ArrayList<Admin>();
+    private ArrayList<Admin> administradores = new ArrayList<>();
     private ArrayList<Pais> paises = new ArrayList<>();
     private ArrayList<Aeropuerto> aeropuertos = new ArrayList<>();
 
