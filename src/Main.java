@@ -47,6 +47,7 @@ public class Main {
                 "2.Listar");
     }
 
+    //Le notifica al usuario de la ausencia de administradores y pregunta si desea registrar uno.
     private static void solicitarPrimerAdmin() {
         out.println("El sistema, acutalmente, no tiene ningun administrador registrado. " +
                 "\n Desea registrar uno? (Y/n)");
@@ -64,7 +65,11 @@ public class Main {
         String[] infoPersona = solicitarInfoPersona();
         char infoAdmin = solicitarInfoAdmin();
 
-        controlador.registrarAdmin(infoPersona,infoAdmin);
+        if (controlador.verificarDuplicidadAdmin()) {
+            out.println("Ese administrador ya se encuentra registrado.");
+        }else {
+            controlador.registrarAdmin(infoPersona, infoAdmin);
+        }
     }
 
     //Esta funcion solicita la informacion pertinente al usuario tipo Admin.
