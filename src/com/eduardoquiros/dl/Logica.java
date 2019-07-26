@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Logica {
     private double impuesto;
     private ArrayList<Pais> paises = new ArrayList<>();
-    private ArrayList<Admin> administradores = new ArrayList<Admin>()
+    private ArrayList<Admin> administradores = new ArrayList<Admin>();
     private final String PAISES = "Paises.txt";
 
     public Logica() {
