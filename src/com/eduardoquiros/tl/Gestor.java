@@ -1,6 +1,7 @@
 package com.eduardoquiros.tl;
 
 import com.eduardoquiros.bl.Admin;
+import com.eduardoquiros.bl.Pais;
 import com.eduardoquiros.dl.Logica;
 
 import java.time.LocalDate;
@@ -31,5 +32,11 @@ public class Gestor {
 
     public void setImpuesto(double impuesto) {
         CL.setImpuesto(impuesto);
+    }
+
+    //Genera nuevo Pais y lo envia a CL.
+    public void registrarPais(String codigo, String nombre, String abreviacion) {
+        Pais tmpPais = new Pais(codigo,nombre,abreviacion);
+        CL.registrarPais(tmpPais);
     }
 }

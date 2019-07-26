@@ -2,12 +2,14 @@ package com.eduardoquiros.dl;
 
 import com.eduardoquiros.bl.Admin;
 import com.eduardoquiros.bl.Aeropuerto;
+import com.eduardoquiros.bl.Pais;
 
 import java.util.ArrayList;
 
 public class Logica {
     private double impuesto;
     private ArrayList<Admin> administradores = new ArrayList<Admin>();
+    private ArrayList<Pais> paises = new ArrayList<>();
     private ArrayList<Aeropuerto> aeropuertos = new ArrayList<>();
 
     public Logica() {
@@ -39,5 +41,9 @@ public class Logica {
     //Regresa la comparacion de si la lista contiene algo.
     public boolean verificarExistenciaAeropuerto() {
         return (aeropuertos.size() != 0);
+    }
+
+    public void registrarPais(Pais tmpPais) {
+        paises.add(tmpPais);
     }
 }
