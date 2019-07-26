@@ -44,7 +44,10 @@ public class Main {
         out.println("Menu Principal \n" +
                 "Seleccione una opcion... \n" +
                 "1.Registrar\n" +
-                "2.Listar");
+                "2.Listar\n" +
+                "3.Modificar\n" +
+                "4.Buscar\n" +
+                "5.Eliminar");
 
         try {
             return Integer.parseInt(in.readLine());
