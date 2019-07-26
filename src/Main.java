@@ -49,6 +49,8 @@ public class Main {
         out.println("Ingrese el anno de nacimiento.");
         out.println("Ingrese el mes de nacimiento.");
         out.println("Ingrese el dia de nacimiento.");
+
+        return infoPersona;
     }
 
     private static boolean verificarExistenciaAdmin() {
