@@ -14,7 +14,10 @@ public class Main {
         do {
             if (verificarExistenciaAdmin()) {
                 if (controlador.verificarExistenciaAdmin()) {
-
+                    int opcionMenuPrincipal;
+                    do{
+                        opcionMenuPrincipal = mostraMenuPrincipal();
+                    }while(opcionMenuPrincipal != 0);
                 }else{
                     solicitarPrimerAeropuerto();
                 }
@@ -22,6 +25,13 @@ public class Main {
                 solicitarPrimerAdmin();
             }
         }while(!(verificarExistenciaAdmin()));
+    }
+
+    private static int mostraMenuPrincipal() {
+        out.println("Menu Principal \n" +
+                "Seleccione una opcion... \n" +
+                "1.Registrar\n" +
+                "2.Listar");
     }
 
     private static void solicitarPrimerAdmin() {
