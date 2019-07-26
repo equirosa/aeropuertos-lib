@@ -17,6 +17,7 @@ public class Main {
                     int opcionMenuPrincipal;
                     do{
                         opcionMenuPrincipal = mostraMenuPrincipal();
+                        procesarOpcionPrincipal(opcionMenuPrincipal);
                     }while(opcionMenuPrincipal != 0);
                 }else{
                     solicitarPrimerAeropuerto();
@@ -25,6 +26,33 @@ public class Main {
                 solicitarPrimerAdmin();
             }
         }while(!(verificarExistenciaAdmin()));
+    }
+
+    //Procesa la opcion seleccionada en el menu principal.
+    private static void procesarOpcionPrincipal(int opcionMenuPrincipal) {
+        switch (opcionMenuPrincipal){
+            default:
+                 out.println("Opcion invalida");
+                 break;
+            case 0:
+                out.println("Saliendo...");
+                break;
+            case 1:
+                menuRegistrar();
+                break:
+            case 2:
+                menuListar();
+                break:
+            case 3:
+                menuModificar();
+                break;
+            case 4:
+                menuBuscar();
+                break;
+            case 5:
+                menuEliminar();
+                break;
+        }
     }
 
     private static void solicitarPrimerAeropuerto() {
