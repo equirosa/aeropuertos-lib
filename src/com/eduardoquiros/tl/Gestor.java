@@ -20,6 +20,6 @@ public class Gestor {
     //Convierte los datos en Admin y envia a CL.
     public void registrarAdmin(String[] infoPersona, char infoAdmin) {
         Admin tmpAdmin = new Admin(infoPersona[0],infoPersona[1],infoPersona[2],infoPersona[3],infoPersona[4],
-                infoPersona[5],infoPersona[6],infoPersona[7],infoPersona[8],infoAdmin)
+                infoPersona[5],infoPersona[6],infoPersona[7], infoAdmin)
     }
 }
