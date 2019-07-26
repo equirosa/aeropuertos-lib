@@ -46,4 +46,15 @@ public class Logica {
     public void registrarPais(Pais tmpPais) {
         paises.add(tmpPais);
     }
+
+//    Devuelve un Array de Strings basado en el ArrayList "paises".
+    public String[] listarPaises() {
+        String[] lista = new String[paises.size()];
+        int contador = 0;
+
+        for(Pais tmpPais : paises){
+            lista[contador]=tmpPais.toString();
+        }
+        return lista;
+    }
 }
