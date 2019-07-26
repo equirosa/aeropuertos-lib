@@ -13,7 +13,11 @@ public class Main {
     public static void main(String[] args){
         do {
             if (verificarExistenciaAdmin()) {
+                if (controlador.verificarExistenciaAdmin()) {
 
+                }else{
+                    solicitarPrimerAeropuerto();
+                }
             }else{
                 solicitarPrimerAdmin();
             }
