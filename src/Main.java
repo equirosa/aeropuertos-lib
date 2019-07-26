@@ -33,6 +33,22 @@ public class Main {
     }
 
     private static void registrarAdmin() {
+        String[] infoPersona = solicitarInfoPersona();
+    }
+
+    //Esta funcion le pide alusuario la informacion basica de toda Persona, exceptuando la contrasenna.
+    private static String[] solicitarInfoPersona() {
+        String[] infoPersona = new String[9];
+
+        out.println("Ingrese el nombre.");
+        out.println("Ingrese el primer apellido.");
+        out.println("Ingrese el segundo apellido.");
+        out.println("Ingrese la cedula.");
+        out.println("Ingrese el email.");
+        out.println("Ingrese el detalle de direccion.");
+        out.println("Ingrese el anno de nacimiento.");
+        out.println("Ingrese el mes de nacimiento.");
+        out.println("Ingrese el dia de nacimiento.");
     }
 
     private static boolean verificarExistenciaAdmin() {
