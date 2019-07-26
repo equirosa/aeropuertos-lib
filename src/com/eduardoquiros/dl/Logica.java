@@ -1,5 +1,6 @@
 package com.eduardoquiros.dl;
 
+import com.eduardoquiros.bl.Admin;
 import com.eduardoquiros.bl.Pais;
 
 import java.io.*;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 public class Logica {
     private double impuesto;
     private ArrayList<Pais> paises = new ArrayList<>();
+    private ArrayList<Admin> administradores = new ArrayList<Admin>()
     private final String PAISES = "Paises.txt";
 
     public Logica() {
@@ -56,5 +58,13 @@ public class Logica {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    //Verifica si hay al menos una entrada en el ArrayList de administradores.
+    public boolean verificarExistenciaAdmin() {
+        if (administradores.size() != 0) {
+            return true;
+        }
+        return false;
     }
 }
