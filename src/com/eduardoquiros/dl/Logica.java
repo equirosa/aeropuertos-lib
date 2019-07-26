@@ -57,4 +57,9 @@ public class Logica {
         }
         return lista;
     }
+
+    public Pais getPais(String s) {
+        Pais tmpPais = buscarPaisPorCodigo();
+        return tmpPais;
+    }
 }
