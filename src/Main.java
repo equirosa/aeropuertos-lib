@@ -30,6 +30,7 @@ public class Main {
 
     //Procesa la opcion seleccionada en el menu principal.
     private static void procesarOpcionPrincipal(int opcionMenuPrincipal) {
+        int opcionObjetos = -1;
         switch (opcionMenuPrincipal){
             default:
                  out.println("Opcion invalida");
@@ -38,21 +39,35 @@ public class Main {
                 out.println("Saliendo...");
                 break;
             case 1:
-                menuRegistrar();
-                break:
-            case 2:
-                menuListar();
-                break:
-            case 3:
-                menuModificar();
-                break;
-            case 4:
-                menuBuscar();
-                break;
             case 5:
-                menuEliminar();
+            case 4:
+            case 3:
+            case 2:
+                opcionObjetos= menuObjetos();
                 break;
         }
+
+        procesarOpcionObjetos(opcionObjetos);
+    }
+
+    private static int menuObjetos() {
+        out.println("Seleccione una opcion...\n" +
+                "1.Usuarios\n" +
+                "2.Paises\n" +
+                "3.Aeropuertos\n" +
+                "4.Aerolineas\n" +
+                "5.Tripulaciones\n" +
+                "6.Ubicaciones\n" +
+                "7.Puertas de abordaje\n" +
+                "8.Naves\n" +
+                "9.Vuelos");
+
+        try {
+            return Integer.parseInt(in.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     private static void solicitarPrimerAeropuerto() {
