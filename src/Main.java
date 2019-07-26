@@ -37,7 +37,7 @@ public class Main {
         String[] infoPersona = solicitarInfoPersona();
         char infoAdmin = solicitarInfoAdmin();
 
-        controlador.registrarAdmin();
+        controlador.registrarAdmin(infoPersona,infoAdmin);
     }
 
     //Esta funcion solicita la informacion pertinente al usuario tipo Admin.
