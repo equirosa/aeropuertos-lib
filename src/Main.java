@@ -91,4 +91,8 @@ public class Main {
     private static boolean verificarExistenciaAdmin() {
         return controlador.verirficarExistenciaAdmin();
     }
+
+    private static void mostrarTasaImpuestos(){
+        out.println(controlador.getImpuesto());
+    }
 }
