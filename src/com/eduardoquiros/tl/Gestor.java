@@ -10,4 +10,9 @@ public class Gestor {
         Pais tmpPais = new Pais(codigo,nombre,abreviatura);
         CL.guardar(tmpPais);
     }
+
+    //Esta funcion le pregunta a la CL si existe algun administrador.
+    public boolean verirficarExistenciaAdmin() {
+        return CL.verificarExistenciaAdmin();
+    }
 }
