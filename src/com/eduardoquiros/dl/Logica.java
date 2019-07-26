@@ -26,6 +26,16 @@ public class Logica {
         administradores.add(tmpAdmin);
     }
 
+    //Cambia la tasa de impuesto.
+    public double getImpuesto() {
+        return impuesto;
+    }
+
+    //Retorna la tasa de impuesto.
+    public void setImpuesto(double impuesto) {
+        this.impuesto = impuesto;
+    }
+
     //Regresa la comparacion de si la lista contiene algo.
     public boolean verificarExistenciaAeropuerto() {
         return (aeropuertos.size() != 0);
