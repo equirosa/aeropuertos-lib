@@ -39,4 +39,9 @@ public class Gestor {
         Pais tmpPais = new Pais(codigo,nombre,abreviacion);
         CL.registrarPais(tmpPais);
     }
+
+    //Pasa el Array desde la CL al Main
+    public String[] listarPaises() {
+        return CL.listarPaises();
+    }
 }

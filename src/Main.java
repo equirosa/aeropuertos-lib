@@ -137,4 +137,13 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    //Lista todos los paises que hay registrados.
+    private static void listarPaises(){
+        String[] lista = controlador.listarPaises();
+
+        for(String info : lista){
+            out.println(info);
+        }
+    }
 }
