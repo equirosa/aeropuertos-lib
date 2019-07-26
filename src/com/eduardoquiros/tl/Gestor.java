@@ -28,4 +28,8 @@ public class Gestor {
     public double getImpuesto() {
         return CL.getImpuesto();
     }
+
+    public void setImpuesto(double impuesto) {
+        CL.setImpuesto(impuesto);
+    }
 }

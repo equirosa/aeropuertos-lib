@@ -95,4 +95,18 @@ public class Main {
     private static void mostrarTasaImpuestos(){
         out.println(controlador.getImpuesto());
     }
+
+    private static void setImpuesto(){
+        out.println("La tasa de impuesto actual es...");
+        mostrarTasaImpuestos();
+        out.println("Ingrese la tasa nueva que desea configurar.");
+        try {
+            controlador.setImpuesto(Double.parseDouble(in.readLine()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        out.println("La nueva tasa de impuesto es...");
+        mostrarTasaImpuestos();
+    }
 }
