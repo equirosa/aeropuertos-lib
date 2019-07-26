@@ -15,4 +15,7 @@ public class Gestor {
     public boolean verirficarExistenciaAdmin() {
         return CL.verificarExistenciaAdmin();
     }
+
+    public void registrarAdmin() {
+    }
 }

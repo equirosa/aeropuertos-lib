@@ -32,9 +32,12 @@ public class Main {
         }
     }
 
+    //Envia la informacion del Admin al gestor.
     private static void registrarAdmin() {
         String[] infoPersona = solicitarInfoPersona();
         char infoAdmin = solicitarInfoAdmin();
+
+        controlador.registrarAdmin();
     }
 
     //Esta funcion solicita la informacion pertinente al usuario tipo Admin.
