@@ -91,6 +91,9 @@ public class Main {
             infoPersona[7] = in.readLine();
             out.println("Ingrese el dia de nacimiento.");
             infoPersona[8] = in.readLine();
+            listarPaises();
+            out.println("Ingrese el codigo del pais de origen.");
+            infoPersona[9] = in.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
