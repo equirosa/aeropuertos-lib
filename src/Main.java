@@ -39,18 +39,29 @@ public class Main {
                 out.println("Saliendo...");
                 break;
             case 1:
-            case 5:
-            case 4:
-            case 3:
+                opcionObjetos= menuObjetos();
+                registrarObjeto(opcionObjetos);
+                break;
             case 2:
                 opcionObjetos= menuObjetos();
+                listarObjeto(opcionObjetos);
+                break;
+            case 3:
+                opcionObjetos= menuObjetos();
+                modificarObjeto(opcionObjetos);
+                break;
+            case 4:
+                opcionObjetos= menuObjetos();
+                buscarObjeto(opcionObjetos);
+                break;
+            case 5:
+                opcionObjetos= menuObjetos();
+                eliminarObjeto(opcionObjetos);
                 break;
         }
-
-        procesarOpcionObjetos(opcionObjetos,opcionMenuPrincipal);
     }
 
-//    Solicita al usuario que especifique sobre que objetos planea ejecutar la accion especificada.
+    //    Solicita al usuario que especifique sobre que objetos planea ejecutar la accion especificada.
     private static int menuObjetos() {
         out.println("Seleccione una opcion...\n" +
                 "1.Usuarios\n" +
