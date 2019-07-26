@@ -119,4 +119,22 @@ public class Main {
         out.println("La nueva tasa de impuesto es...");
         mostrarTasaImpuestos();
     }
+
+    //Solicita info del Pais y la envia a Gestor.
+    private static void registrarPais(){
+        try {
+            String codigo, nombre, abreviacion;
+
+            out.println("Introduzca el codigo del pais.");
+            codigo = in.readLine();
+            out.println("Introduzca el nombre del pais.");
+            nombre = in.readLine();
+            out.println("Introduzca la abreviacion del pais.");
+            abreviacion = in.readLine();
+
+            controlador.registrarPais(codigo,nombre,abreviacion);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
