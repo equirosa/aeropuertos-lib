@@ -26,6 +26,8 @@ public class Logica {
         administradores.add(tmpAdmin);
     }
 
+    //Regresa la comparacion de si la lista contiene algo.
     public boolean verificarExistenciaAeropuerto() {
+        return (aeropuertos.size() != 0);
     }
 }
