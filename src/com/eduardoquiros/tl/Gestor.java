@@ -45,7 +45,7 @@ public class Gestor {
         return CL.listarPaises();
     }
 
-    public boolean verificarDuplicidadAdmin() {
-        return CL.verificarDuplicidadAdmin();
+    public boolean verificarDuplicidadAdmin(String s) {
+        return CL.verificarDuplicidadAdmin(s);
     }
 }

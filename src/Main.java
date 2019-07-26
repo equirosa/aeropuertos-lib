@@ -65,7 +65,7 @@ public class Main {
         String[] infoPersona = solicitarInfoPersona();
         char infoAdmin = solicitarInfoAdmin();
 
-        if (controlador.verificarDuplicidadAdmin()) {
+        if (controlador.verificarDuplicidadAdmin(infoPersona[3])) {
             out.println("Ese administrador ya se encuentra registrado.");
         }else {
             controlador.registrarAdmin(infoPersona, infoAdmin);
