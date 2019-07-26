@@ -45,6 +45,13 @@ public class Main {
                 "Seleccione una opcion... \n" +
                 "1.Registrar\n" +
                 "2.Listar");
+
+        try {
+            return Integer.parseInt(in.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     //Le notifica al usuario de la ausencia de administradores y pregunta si desea registrar uno.
