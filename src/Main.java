@@ -70,7 +70,7 @@ public class Main {
 
     //Esta funcion le pide alusuario la informacion basica de toda Persona, exceptuando la contrasenna.
     private static String[] solicitarInfoPersona() {
-        String[] infoPersona = new String[9];
+        String[] infoPersona = new String[10];
 
         try{
             out.println("Ingrese el nombre.");
