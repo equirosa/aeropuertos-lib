@@ -44,6 +44,6 @@ public class Logica {
     }
 
     public void registrarPais(Pais tmpPais) {
-        
+        paises.add(tmpPais);
     }
 }
