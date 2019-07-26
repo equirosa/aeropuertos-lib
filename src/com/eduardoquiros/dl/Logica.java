@@ -68,6 +68,7 @@ public class Logica {
         return false;
     }
 
+    //Agrega Admin a lista.
     public void registrarAdmin(Admin tmpAdmin) {
         administradores.add(tmpAdmin);
     }
