@@ -24,4 +24,12 @@ public class Gestor {
     public boolean verificarExistenciaAdmin() {
         return CL.verificarExistenciaAeropuerto();
     }
+
+    public double getImpuesto() {
+        return CL.getImpuesto();
+    }
+
+    public void setImpuesto(double impuesto) {
+        CL.setImpuesto(impuesto);
+    }
 }

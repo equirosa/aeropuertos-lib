@@ -1,15 +1,19 @@
 package com.eduardoquiros.bl;
 
+import java.util.ArrayList;
+
 public class Aeropuerto {
     private String codigo,nombre;
     private Pais lugar;
     private Admin supervisor;
+    private ArrayList<Ubicacion> ubicaciones;
 
     public Aeropuerto(String codigo, String nombre, Pais lugar, Admin supervisor) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.lugar = lugar;
         this.supervisor = supervisor;
+        ubicaciones = new ArrayList<>();
     }
 
     public String getCodigo() {
@@ -62,6 +66,7 @@ public class Aeropuerto {
                 ", nombre='" + nombre + '\'' +
                 ", lugar=" + lugar +
                 ", supervisor=" + supervisor +
+                ", ubicaciones=" + ubicaciones+
                 '}';
     }
 }
