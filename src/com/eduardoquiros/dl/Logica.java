@@ -58,8 +58,11 @@ public class Logica {
         return lista;
     }
 
-    public Pais getPais(String s) {
-        Pais tmpPais = buscarPaisPorCodigo();
-        return tmpPais;
+    //Retorna el pais cuyo codigo coincida con el presentado, o retorna "null".
+    public Pais buscarPaisPorCodigo(String s) {
+        for(Pais tmpPais : paises){
+            if (tmpPais.getCodigo().equals(s)) return tmpPais;
+        }
+        return null;
     }
 }
