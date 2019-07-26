@@ -61,6 +61,41 @@ public class Main {
         }
     }
 
+    private static void registrarObjeto(int opcionObjetos) {
+        switch (opcionObjetos){
+            default:
+                out.println("Opcion invalida.");
+                break;
+            case 1:
+                registrarAdmin();
+                break;
+            case 2:
+                registrarPais();
+                break;
+            case 3:
+                registrarAeropuerto();
+                break;
+            case 4:
+                registrarAerolinea();
+                break;
+            case 5:
+                registrarTripulacion();
+                break;
+            case 6:
+                registrarUbicacion();
+                break;
+            case 7:
+                registrarPuerta();
+                break;
+            case 8:
+                registrarAvion();
+                break;
+            case 9:
+                registrarVuelo();
+                break;
+        }
+    }
+
     //    Solicita al usuario que especifique sobre que objetos planea ejecutar la accion especificada.
     private static int menuObjetos() {
         out.println("Seleccione una opcion...\n" +
@@ -79,7 +114,7 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return 0;
+        return -1;
     }
 
     private static void solicitarPrimerAeropuerto() {
