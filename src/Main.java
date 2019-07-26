@@ -47,9 +47,10 @@ public class Main {
                 break;
         }
 
-        procesarOpcionObjetos(opcionObjetos);
+        procesarOpcionObjetos(opcionObjetos,opcionMenuPrincipal);
     }
 
+//    Solicita al usuario que especifique sobre que objetos planea ejecutar la accion especificada.
     private static int menuObjetos() {
         out.println("Seleccione una opcion...\n" +
                 "1.Usuarios\n" +
