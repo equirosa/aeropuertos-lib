@@ -1,12 +1,14 @@
 package com.eduardoquiros.dl;
 
 import com.eduardoquiros.bl.Admin;
+import com.eduardoquiros.bl.Aeropuerto;
 
 import java.util.ArrayList;
 
 public class Logica {
     private double impuesto;
     private ArrayList<Admin> administradores = new ArrayList<Admin>();
+    private ArrayList<Aeropuerto> aeropuertos = new ArrayList<>();
 
     public Logica() {
     }
