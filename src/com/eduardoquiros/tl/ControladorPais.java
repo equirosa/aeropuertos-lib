@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class ControladorPais {
 	DaoFactory factory;
-	IPaisDao daoObject
+	IPaisDao daoObject;
 	
 	public ControladorPais() {
 		factory = DaoFactory.getDaoFactory(DaoFactory.MySQL);
