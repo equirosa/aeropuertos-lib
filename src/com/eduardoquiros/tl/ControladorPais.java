@@ -2,6 +2,7 @@ package com.eduardoquiros.tl;
 
 import com.eduardoquiros.bl.dao.factory.DaoFactory;
 import com.eduardoquiros.bl.dao.pais.IPaisDao;
+import com.eduardoquiros.bl.dao.pais.Pais;
 import com.eduardoquiros.excepciones.OmniVuelosException;
 
 import java.sql.SQLException;
@@ -24,6 +25,17 @@ public class ControladorPais {
 			return exc;
 		} catch (Exception e) {
 			return new OmniVuelosException(e.getMessage());
+		}
+		return null;
+	}
+	
+	public Pais buscarPorCodigo(String codigo){
+		try {
+			return daoObject.buscarPorCodigo(codigo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return null;
 	}
