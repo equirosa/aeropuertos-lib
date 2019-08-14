@@ -34,4 +34,9 @@ public class MySqlUbicacionDao implements IUbicacionDao{
 	public void modificar(String codigo, String nombre, String aeropuerto) throws Exception {
 	Conector.getConector().ejecutarSql("update ubicacion set codigo_aeropuerto='"+aeropuerto+"',nombre='"+nombre+"' where codigo='"+codigo+"';");
 	}
+	
+	@Override
+	public Ubicacion buscarPorCodigo(String codigo) throws Exception {
+		Conector.getConector().ejecutarQuery("select codigo,codigo_aeropuerto,nombre from articulo where codigo='"+codigo+"';");
+	}
 }

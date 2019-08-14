@@ -7,5 +7,5 @@ public interface IUbicacionDao {
 	ArrayList<Ubicacion> getUbicaciones() throws Exception;
 	void eliminar(String codigo)throws Exception;
 	void modificar(String codigo, String nombre, String aeropuerto) throws Exception;
-	
+	Ubicacion buscarPorCodigo(String codigo) throws Exception;
 }
