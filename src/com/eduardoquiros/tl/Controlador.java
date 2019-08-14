@@ -9,8 +9,7 @@ import java.time.LocalDate;
 public class Controlador {
     private Logica CL = new Logica();
     
-    public Controlador() {
-    }
+    public Controlador() {}
     
     //Esta funcion le pregunta a la CL si existe algun administrador.
     public boolean verirficarExistenciaAdmin() {
