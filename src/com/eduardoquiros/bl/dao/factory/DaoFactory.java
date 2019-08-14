@@ -1,5 +1,7 @@
 package com.eduardoquiros.bl.dao.factory;
 
+import com.eduardoquiros.bl.dao.pais.IPaisDao;
+
 public abstract class DaoFactory {
 	public static final int MySQL = 1;
 	public static final int SQL = 2;
@@ -18,4 +20,5 @@ public abstract class DaoFactory {
 		}
 		return null;
 	}
+	public abstract IPaisDao getPaisDao();
 }
