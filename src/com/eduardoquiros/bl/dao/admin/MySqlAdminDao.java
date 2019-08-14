@@ -1,6 +1,7 @@
 package com.eduardoquiros.bl.dao.admin;
 
 import com.eduardoquiros.accesodatos.Conector;
+import com.eduardoquiros.bl.dao.pais.MySqlPaisDao;
 import com.eduardoquiros.bl.dao.pais.Pais;
 
 import java.sql.ResultSet;
@@ -19,9 +20,10 @@ public class MySqlAdminDao implements IAdminDao{
 		ArrayList<Admin> admins = new ArrayList<>();
 		ResultSet rs = Conector.getConector().ejecutarQuery("select cedula,nombre,apellido1,apellido2,email,direccion,fecha_nacimiento,nacionalidad,edad,genero from admin");
 		while (rs.next()) {
-		Admin tmpAdmin = new Admin(rs.getString("nombre"),rs.getString("apellido1"),rs.getString("apellido2"),rs.getString("cedula"),rs.getString("email"),rs.getString("direccion"),rs.getString("nacionalidad"),LocalDate.parse(rs.getString("fecha_nacimiento")),rs.getInt("edad"),rs.getString("genero").charAt(0)));
+		Admin tmpAdmin = new Admin(rs.getString("nombre"),rs.getString("apellido1"),rs.getString("apellido2"),rs.getString("cedula"),rs.getString("email"),rs.getString("direccion"), MySqlPaisDao.buscarPorCodigo(rs.getString("nacionalidad")),LocalDate.parse(rs.getString("fecha_nacimiento")),rs.getInt("edad"),rs.getString("genero").charAt(0));
 		admins.add(tmpAdmin);
 		}
+		return admins;
 	}
 	
 	@Override
