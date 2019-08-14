@@ -29,4 +29,9 @@ public class MySqlUbicacionDao implements IUbicacionDao{
 	public void eliminar(String codigo) throws Exception {
 	Conector.getConector().ejecutarSql("delete from ubicacion where codigo="+codigo);
 	}
+	
+	@Override
+	public void modificar(String codigo, String nombre, String aeropuerto) throws Exception {
+	Conector.getConector().ejecutarSql("update ubicacion set codigo_aeropuerto='"+aeropuerto+"',nombre='"+nombre+"' where codigo='"+codigo+"';");
+	}
 }
