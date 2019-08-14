@@ -9,7 +9,13 @@ import java.time.Period;
 public class Admin extends Persona {
     private int edad;
     private char genero;
-
+    
+    public Admin(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, int edad, char genero) {
+        super(nombre, apellido1, apellido2, cedula, email, direccion, nacionalidad, fechaNacimiento);
+        this.edad = edad;
+        this.genero = genero;
+    }
+    
     public Admin() {
     }
 
