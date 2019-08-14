@@ -3,7 +3,6 @@ package com.eduardoquiros.tl;
 import com.eduardoquiros.bl.dao.factory.DaoFactory;
 import com.eduardoquiros.bl.dao.pais.IPaisDao;
 import com.eduardoquiros.excepciones.OmniVuelosException;
-import com.eduardoquiros.utils.Mensajes;
 
 import java.sql.SQLException;
 
