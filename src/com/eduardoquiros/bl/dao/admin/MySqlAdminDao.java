@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MySqlAdminDao implements IAdminDao{
+	private static MySqlPaisDao gestorPaises;
 	@Override
 	public void insertar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
 	                     Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws Exception {
@@ -25,7 +26,7 @@ public class MySqlAdminDao implements IAdminDao{
 		while (rs.next()) {
 		Admin tmpAdmin = new Admin(rs.getString("nombre"),rs.getString("apellido1"),
 				rs.getString("apellido2"),rs.getString("cedula"),rs.getString("email"),
-				rs.getString("direccion"), MySqlPaisDao.buscarPorCodigo(rs.getString("nacionalidad")),
+				rs.getString("direccion"), gestorPaises.buscarPorCodigo(rs.getString("nacionalidad")),
 				LocalDate.parse(rs.getString("fecha_nacimiento")),rs.getInt("edad"),
 				rs.getString("genero").charAt(0));
 		admins.add(tmpAdmin);
