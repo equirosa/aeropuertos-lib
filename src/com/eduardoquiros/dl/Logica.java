@@ -2,7 +2,7 @@ package com.eduardoquiros.dl;
 
 import com.eduardoquiros.bl.dao.admin.Admin;
 import com.eduardoquiros.bl.Aeropuerto;
-import com.eduardoquiros.bl.Pais;
+import com.eduardoquiros.bl.dao.pais.Pais;
 
 import java.util.ArrayList;
 

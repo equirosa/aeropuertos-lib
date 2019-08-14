@@ -1,4 +1,4 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.pais;
 
 public class Pais {
     private String codigo, nombre, abreviatura;

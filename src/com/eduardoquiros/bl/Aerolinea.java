@@ -1,5 +1,7 @@
 package com.eduardoquiros.bl;
 
+import com.eduardoquiros.bl.dao.pais.Pais;
+
 import java.awt.image.BufferedImage;
 
 public class Aerolinea {

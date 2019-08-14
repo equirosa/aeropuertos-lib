@@ -1,7 +1,7 @@
 package com.eduardoquiros.bl.dao.admin;
 
 import com.eduardoquiros.accesodatos.Conector;
-import com.eduardoquiros.bl.Pais;
+import com.eduardoquiros.bl.dao.pais.Pais;
 
 import java.sql.ResultSet;
 import java.time.LocalDate;
