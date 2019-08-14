@@ -1,5 +1,7 @@
 package com.eduardoquiros.bl;
 
+import com.eduardoquiros.bl.dao.ubicacion.Ubicacion;
+
 import java.util.ArrayList;
 
 public class Aeropuerto {

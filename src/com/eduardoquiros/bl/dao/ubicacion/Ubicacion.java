@@ -1,4 +1,4 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.ubicacion;
 
 public class Ubicacion {
     private String codigo, nombre;
