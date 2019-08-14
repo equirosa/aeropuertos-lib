@@ -8,7 +8,10 @@ import java.time.LocalDate;
 
 public class Gestor {
     private Logica CL = new Logica();
-
+    
+    public Gestor() {
+    }
+    
     //Esta funcion le pregunta a la CL si existe algun administrador.
     public boolean verirficarExistenciaAdmin() {
         return CL.verificarExistenciaAdmin();
