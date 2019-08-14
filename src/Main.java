@@ -1,5 +1,4 @@
 import com.eduardoquiros.bl.dao.admin.Admin;
-import com.eduardoquiros.tl.Controlador;
 
 public class Main {
     private static Controlador controlador;
