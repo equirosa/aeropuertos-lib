@@ -1,12 +1,12 @@
 package com.eduardoquiros.bl.dao.ubicacion;
 
 public class Ubicacion {
-    private String codigo, nombre;
+    private String codigo, nombre,aeropuerto;
 
     public Ubicacion() {
     }
 
-    public Ubicacion(String codigo, String nombre) {
+    public Ubicacion(String codigo,String aeropuerto,String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
     }
