@@ -6,10 +6,10 @@ import com.eduardoquiros.dl.Logica;
 
 import java.time.LocalDate;
 
-public class Gestor {
+public class Controlador {
     private Logica CL = new Logica();
     
-    public Gestor() {
+    public Controlador() {
     }
     
     //Esta funcion le pregunta a la CL si existe algun administrador.
