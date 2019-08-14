@@ -39,4 +39,15 @@ public class ControladorPais {
 		}
 		return null;
 	}
+	
+	public OmniVuelosException eliminar(String codigo){
+		try {
+			daoObject.eliminar(codigo);
+		} catch (SQLException e) {
+			return new OmniVuelosException(e.getErrorCode());
+		} catch (Exception e) {
+			return new OmniVuelosException(e.getMessage());
+		}
+		return null;
+	}
 }
