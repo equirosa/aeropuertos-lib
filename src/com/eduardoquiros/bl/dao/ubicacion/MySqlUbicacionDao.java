@@ -3,7 +3,6 @@ package com.eduardoquiros.bl.dao.ubicacion;
 import com.eduardoquiros.accesodatos.Conector;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MySqlUbicacionDao implements IUbicacionDao{
