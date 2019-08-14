@@ -1,6 +1,6 @@
 package com.eduardoquiros.tl;
 
-import com.eduardoquiros.bl.Admin;
+import com.eduardoquiros.bl.dao.admin.Admin;
 import com.eduardoquiros.bl.Pais;
 import com.eduardoquiros.dl.Logica;
 

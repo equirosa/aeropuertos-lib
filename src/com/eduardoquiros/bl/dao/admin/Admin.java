@@ -1,9 +1,12 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.admin;
+
+import com.eduardoquiros.bl.Pais;
+import com.eduardoquiros.bl.Persona;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Admin extends Persona{
+public class Admin extends Persona {
     private int edad;
     private char genero;
 
