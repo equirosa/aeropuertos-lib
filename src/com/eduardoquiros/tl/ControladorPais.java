@@ -16,15 +16,15 @@ public class ControladorPais {
 		daoObject = factory.getPaisDao();
 	}
 	
-	public OmniVuelosException insertar(String codigo, String nombre, String abreviatura){
+	public String insertar(String codigo, String nombre, String abreviatura){
 		try {
 			daoObject.insertar(codigo,nombre,abreviatura);
 		} catch (SQLException e) {
 			int error = e.getErrorCode();
 			OmniVuelosException exc = new OmniVuelosException(error);
-			return exc;
+			return exc.numeroToString();
 		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage());
+			return new OmniVuelosException(e.getMessage()).numeroToString();
 		}
 		return null;
 	}
