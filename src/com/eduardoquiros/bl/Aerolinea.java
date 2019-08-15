@@ -20,6 +20,7 @@ public class Aerolinea {
         this.pais = pais;
     }
 
+    @SuppressWarnings("WeakerAccess")
     public String getCedulaJuridica() {
         return cedulaJuridica;
     }

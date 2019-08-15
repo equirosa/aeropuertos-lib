@@ -6,7 +6,7 @@ public class AccesoBD {
 	private Connection conn;
 	private Statement stmt;
 	
-	public AccesoBD(String driver, String strConnection) throws SQLException,Exception {
+	public AccesoBD(String driver, String strConnection) throws Exception {
 		//se registra el driver del motor de la base de datos
 		Class.forName(driver);
 		//inicializa la conexion, pasando el string de conexion al metodo getConnection del DriverManager.
@@ -15,7 +15,7 @@ public class AccesoBD {
 		stmt=conn.createStatement();
 	}
 	
-	public AccesoBD(String driver, String url, String user, String pswd) throws SQLException,Exception{
+	public AccesoBD(String driver, String url, String user, String pswd) throws Exception{
 		Class.forName(driver);
 		conn=DriverManager.getConnection(url,user,pswd);
 		stmt=conn.createStatement();

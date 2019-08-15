@@ -13,7 +13,7 @@ public class MySqlPaisDao implements IPaisDao{
 	}
 	
 	@Override
-	public ArrayList<Pais> getPaises() throws SQLException,Exception {
+	public ArrayList<Pais> getPaises() throws Exception {
 		ArrayList<Pais> paises = new ArrayList<>();
 		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,nombre,abreviatura from pais;");
 		while (rs.next()) {
@@ -23,7 +23,7 @@ public class MySqlPaisDao implements IPaisDao{
 	}
 	
 	@Override
-	public void eliminar(String codigo) throws SQLException,Exception {
+	public void eliminar(String codigo) throws Exception {
 	Conector.getConector().ejecutarSql("delete from pais where codigo='"+codigo+"';");
 	}
 	

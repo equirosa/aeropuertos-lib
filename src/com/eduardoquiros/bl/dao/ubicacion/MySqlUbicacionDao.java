@@ -38,7 +38,6 @@ public class MySqlUbicacionDao implements IUbicacionDao{
 	@Override
 	public Ubicacion buscarPorCodigo(String codigo) throws Exception {
 		ResultSet rs=Conector.getConector().ejecutarQuery("select codigo,codigo_aeropuerto,nombre from articulo where codigo='"+codigo+"';");
-		Ubicacion tmpUbicacion = new Ubicacion(rs.getString("codigo"),rs.getString("codigo_aeropuerto"),rs.getString("nombre"));
-		return tmpUbicacion;
+		return new Ubicacion(rs.getString("codigo"),rs.getString("codigo_aeropuerto"),rs.getString("nombre"));
 	}
 }
