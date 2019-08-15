@@ -2,10 +2,12 @@ package com.eduardoquiros.tl;
 
 import com.eduardoquiros.bl.dao.factory.DaoFactory;
 import com.eduardoquiros.bl.dao.pais.IPaisDao;
+import com.eduardoquiros.bl.dao.pais.Pais;
 import com.eduardoquiros.excepciones.OmniVuelosException;
 import com.eduardoquiros.utils.Mensajes;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ControladorPais {
 	DaoFactory factory;
@@ -62,5 +64,23 @@ public class ControladorPais {
 		}
 	}
 	
-	public String ge
+	public String[] getPaises(){
+		String[] lista = new String[1];
+		ArrayList<Pais> paises;
+		try {
+			paises = daoObject.getPaises();
+		} catch (SQLException e) {
+			lista[0] = new OmniVuelosException(e.getErrorCode()).numeroToString();
+			return lista;
+		} catch (Exception e) {
+			lista[0] = new OmniVuelosException(e.getMessage()).numeroToString();
+			return lista;
+		}
+		lista = new String[paises.size()];
+		int posicion = 0;
+		for (Pais tmpPais:paises){
+			lista[posicion]=tmpPais.toString();
+		}
+		return lista;
+	}
 }
