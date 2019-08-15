@@ -14,7 +14,12 @@ public class MySqlPaisDao implements IPaisDao{
 	
 	@Override
 	public ArrayList<Pais> getPaises() throws SQLException,Exception {
-		return null;
+		ArrayList<Pais> paises = new ArrayList<>();
+		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,nombre,abreviatura from pais;");
+		while (rs.next()) {
+			paises.add(new Pais(rs.getString("codigo"),rs.getString("nombre"),rs.getString("abreviatura")));
+		}
+		return paises;
 	}
 	
 	@Override
