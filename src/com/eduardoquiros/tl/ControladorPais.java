@@ -4,6 +4,7 @@ import com.eduardoquiros.bl.dao.factory.DaoFactory;
 import com.eduardoquiros.bl.dao.pais.IPaisDao;
 import com.eduardoquiros.bl.dao.pais.Pais;
 import com.eduardoquiros.excepciones.OmniVuelosException;
+import com.eduardoquiros.utils.Mensajes;
 
 import java.sql.SQLException;
 
@@ -40,14 +41,14 @@ public class ControladorPais {
 		return null;
 	}
 	
-	public OmniVuelosException eliminar(String codigo){
+	public String eliminar(String codigo){
 		try {
 			daoObject.eliminar(codigo);
+			return Mensajes.MNSJ_EXITO;
 		} catch (SQLException e) {
-			return new OmniVuelosException(e.getErrorCode());
+			return new OmniVuelosException(e.getErrorCode()).numeroToString();
 		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage());
+			return new OmniVuelosException(e.getMessage()).numeroToString();
 		}
-		return null;
 	}
 }
