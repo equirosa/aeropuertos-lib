@@ -19,8 +19,7 @@ public class OmniVuelosException extends Exception{
 	public String numeroToString(){
 		switch (numero){
 			default: return Mensajes.MNSJ_NO_DEFINIDO;
-			case 1062:
-				return Mensajes.MNSJ_REG_REPETIDO;
+			case 1062: return Mensajes.MNSJ_REG_REPETIDO;
 			case 1064: return Mensajes.MNSJ_MALA_SINTAXIS;
 		}
 	}
