@@ -3,6 +3,7 @@ package com.eduardoquiros.bl.dao.pais;
 import com.eduardoquiros.accesodatos.Conector;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MySqlPaisDao implements IPaisDao{
@@ -12,18 +13,18 @@ public class MySqlPaisDao implements IPaisDao{
 	}
 	
 	@Override
-	public ArrayList<Pais> getPaises() throws Exception {
+	public ArrayList<Pais> getPaises() throws SQLException,Exception {
 		return null;
 	}
 	
 	@Override
-	public void eliminar(String codigo) throws Exception {
-	
+	public void eliminar(String codigo) throws SQLException,Exception {
+	Conector.getConector().ejecutarSql("delete from pais where codigo='"+codigo+"';");
 	}
 	
 	@Override
 	public void modificar(String codigo, String nombre, String abreviatura) throws Exception {
-	
+	Conector.getConector().ejecutarSql("update pais set nombre='"+nombre+"',abreviatura='"+abreviatura+"';");
 	}
 	
 	@Override

@@ -51,4 +51,15 @@ public class ControladorPais {
 			return new OmniVuelosException(e.getMessage()).numeroToString();
 		}
 	}
+	
+	public String modificar(String codigo, String nombre, String abreviatura){
+		try {
+			daoObject.modificar(codigo,nombre,abreviatura);
+			return Mensajes.MNSJ_EXITO;
+		} catch (SQLException e) {
+			return new OmniVuelosException(e.getErrorCode()).numeroToString();
+		} catch (Exception e) {
+			return new OmniVuelosException(e.getMessage()).numeroToString();
+		}
+	}
 }
