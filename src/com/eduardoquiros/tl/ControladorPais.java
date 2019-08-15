@@ -80,6 +80,7 @@ public class ControladorPais {
 		int posicion = 0;
 		for (Pais tmpPais:paises){
 			lista[posicion]=tmpPais.toString();
+			posicion++;
 		}
 		return lista;
 	}
