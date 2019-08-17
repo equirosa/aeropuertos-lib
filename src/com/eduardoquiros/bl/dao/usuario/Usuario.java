@@ -1,10 +1,11 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.usuario;
 
+import com.eduardoquiros.bl.Persona;
 import com.eduardoquiros.bl.dao.pais.Pais;
 
 import java.time.LocalDate;
 
-public class Usuario extends Persona{
+public class Usuario extends Persona {
     protected int edad;
 
     public Usuario() {
