@@ -41,10 +41,10 @@ public class MySqlAdminDao implements IAdminDao{
 	
 	@Override
 	public void modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	                      Pais nacionalidad, LocalDate fechaNacimiento, char genero) throws Exception {
+	                      Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws Exception {
 	Conector.getConector().ejecutarSql("update admin set nombre="+nombre+",apellido1="+apellido1+",apellido2="+apellido2+"," +
 			"email="+email+",direccion="+direccion+",nacionalidad="+nacionalidad.getCodigo()+",fecha_nacimiento="+fechaNacimiento+"," +
-			"genero="+genero+" where cedula="+cedula+";");
+			"genero="+genero+",edad="+edad+" where cedula="+cedula+";");
 	}
 	
 	@Override

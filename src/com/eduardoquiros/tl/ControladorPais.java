@@ -28,7 +28,7 @@ public class ControladorPais {
 		} catch (Exception e) {
 			return new OmniVuelosException(e.getMessage()).numeroToString();
 		}
-		return null;
+		return Mensajes.MNSJ_EXITO;
 	}
 	
 	public String buscarPorCodigo(String codigo){
