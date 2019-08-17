@@ -1,10 +1,11 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.tripulante;
 
+import com.eduardoquiros.bl.Persona;
 import com.eduardoquiros.bl.dao.pais.Pais;
 
 import java.time.LocalDate;
 
-public class Tripulante extends Persona{
+public class Tripulante extends Persona {
     private int annosExp;
     private String numLicencia, puesto, telefono;
     private LocalDate fechaGraduacion;

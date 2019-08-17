@@ -1,6 +1,6 @@
 package com.eduardoquiros.bl.dao.tripulacion;
 
-import com.eduardoquiros.bl.Tripulante;
+import com.eduardoquiros.bl.dao.tripulante.Tripulante;
 
 import java.util.ArrayList;
 
