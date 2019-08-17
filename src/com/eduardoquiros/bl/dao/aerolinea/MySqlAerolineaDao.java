@@ -52,5 +52,6 @@ public class MySqlAerolineaDao implements IAerolineaDao{
 					rs.getString("empresa_duenna"), (BufferedImage) rs.getBlob("logo"),
 					gestorPaises.buscarPorCodigo(rs.getString("localidad")));
 		}
+		return tmpAerolinea;
 	}
 }
