@@ -1,4 +1,4 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.aerolinea;
 
 import com.eduardoquiros.bl.dao.pais.Pais;
 
