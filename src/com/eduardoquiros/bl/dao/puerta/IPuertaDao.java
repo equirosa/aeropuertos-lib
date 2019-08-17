@@ -8,4 +8,5 @@ public interface IPuertaDao {
 	void eliminar(String codigo)throws Exception;
 	void modificar(String codigo) throws Exception;
 	Puerta buscarPorCodigo(String codigo) throws Exception;
+	ArrayList<Puerta> getPuertasPorUbicacion(String ubicacion) throws Exception;
 }

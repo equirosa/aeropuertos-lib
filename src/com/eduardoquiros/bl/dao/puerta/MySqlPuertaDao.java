@@ -13,10 +13,10 @@ public class MySqlPuertaDao implements IPuertaDao{
 	
 	@Override
 	public ArrayList<Puerta> getPuertas() throws Exception {
-		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo from puertas");
+		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,ubicacion from puertas");
 		ArrayList<Puerta> puertas = new ArrayList<>();
 		while (rs.next()) {
-			puertas.add(new Puerta(rs.getString("codigo")));
+			puertas.add(new Puerta(rs.getString("ubicacion")+rs.getString("codigo")));
 		}
 		return puertas;
 	}
@@ -39,5 +39,15 @@ public class MySqlPuertaDao implements IPuertaDao{
 			tmpPuerta = new Puerta(rs.getString("codigo"));
 		}
 		return tmpPuerta;
+	}
+	
+	@Override
+	public ArrayList<Puerta> getPuertasPorUbicacion(String ubicacion) throws Exception {
+		ArrayList<Puerta> puertas = new ArrayList<>();
+		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,ubicacion from puertas where ubicacion="+ubicacion+";");
+		while (rs.next()) {
+			puertas.add(new Puerta(rs.getString("ubicacion")+rs.getString("codigo")));
+		}
+		return puertas;
 	}
 }

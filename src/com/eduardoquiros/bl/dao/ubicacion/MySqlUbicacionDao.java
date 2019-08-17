@@ -1,11 +1,13 @@
 package com.eduardoquiros.bl.dao.ubicacion;
 
 import com.eduardoquiros.accesodatos.Conector;
+import com.eduardoquiros.bl.dao.puerta.MySqlPuertaDao;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class MySqlUbicacionDao implements IUbicacionDao{
+	private MySqlPuertaDao puertaDao = new MySqlPuertaDao();
 	
 	@Override
 	public void insertar(String codigo, String nombre, String aeropuerto) throws Exception {
@@ -38,6 +40,6 @@ public class MySqlUbicacionDao implements IUbicacionDao{
 	@Override
 	public Ubicacion buscarPorCodigo(String codigo) throws Exception {
 		ResultSet rs=Conector.getConector().ejecutarQuery("select codigo,codigo_aeropuerto,nombre from articulo where codigo='"+codigo+"';");
-		return new Ubicacion(rs.getString("codigo"),rs.getString("codigo_aeropuerto"),rs.getString("nombre"));
+		return new Ubicacion(rs.getString("codigo"),rs.getString("nombre"),puertaDao.buscar(codigo));
 	}
 }
