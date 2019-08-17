@@ -1,7 +1,10 @@
 package com.eduardoquiros.bl.dao.ubicacion;
 
+import java.util.ArrayList;
+
 public class Ubicacion {
     private String codigo, nombre,aeropuerto;
+    private ArrayList<Puerta> puertas;
 
     public Ubicacion() {
     }
@@ -9,6 +12,7 @@ public class Ubicacion {
     public Ubicacion(String codigo,String aeropuerto,String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
+        puertas = new ArrayList<Puerta>();
     }
 
     public String getCodigo() {
