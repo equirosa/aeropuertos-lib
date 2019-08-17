@@ -5,13 +5,13 @@ import com.eduardoquiros.bl.dao.puerta.Puerta;
 import java.util.ArrayList;
 
 public class Ubicacion {
-    private String codigo, nombre,aeropuerto;
+    private String codigo, nombre;
     private ArrayList<Puerta> puertas;
 
     public Ubicacion() {
     }
 
-    public Ubicacion(String codigo,String aeropuerto,String nombre) {
+    public Ubicacion(String codigo,String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
         puertas = new ArrayList<Puerta>();
