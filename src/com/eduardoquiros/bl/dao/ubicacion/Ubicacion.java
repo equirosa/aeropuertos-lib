@@ -10,13 +10,27 @@ public class Ubicacion {
 
     public Ubicacion() {
     }
-
-    public Ubicacion(String codigo,String nombre) {
+    
+    public Ubicacion(String codigo, String nombre, ArrayList<Puerta> puertas) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.puertas = puertas;
+    }
+    
+    public Ubicacion(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
         puertas = new ArrayList<Puerta>();
     }
-
+    
+    public ArrayList<Puerta> getPuertas() {
+        return puertas;
+    }
+    
+    public void setPuertas(ArrayList<Puerta> puertas) {
+        this.puertas = puertas;
+    }
+    
     public String getCodigo() {
         return codigo;
     }
