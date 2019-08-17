@@ -29,8 +29,9 @@ public class MySqlUsuarioDao implements IUsuarioDao {
 			usuarios.add(new Usuario(rs.getString("nombre"),rs.getString("apellido1"),
 					rs.getString("apellido2"),rs.getString("cedula"),rs.getString("email"),
 					rs.getString("direccion"),paisDao.buscarPorCodigo(rs.getString("nacionalidad")),
-					LocalDate.parse(rs.getString("fecha_nacimiento")),rs.getInt("edad"));
+					LocalDate.parse(rs.getString("fecha_nacimiento")),rs.getInt("edad")));
 		}
+		return usuarios;
 	}
 	
 	@Override
@@ -40,10 +41,10 @@ public class MySqlUsuarioDao implements IUsuarioDao {
 	
 	@Override
 	public void modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	                      Pais nacionalidad, LocalDate fechaNacimiento, int edad) throws Exception {
+	                      Pais nacionalidad, LocalDate fechaNacimiento) throws Exception {
 		Conector.getConector().ejecutarSql("update usuarios set nombre='"+nombre+"',apellido1='"+apellido1+"',apellido2='"+
 				apellido2+"',email='"+email+"',direccion='"+direccion+"',nacionalidad='"+nacionalidad.getCodigo()+"',fecha_nacimiento="+
-				fechaNacimiento+",edad="+email+";");
+				fechaNacimiento+";");
 	}
 	
 	@Override
