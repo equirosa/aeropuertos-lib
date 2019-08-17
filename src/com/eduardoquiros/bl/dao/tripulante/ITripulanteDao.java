@@ -1,7 +1,6 @@
 package com.eduardoquiros.bl.dao.tripulante;
 
 import com.eduardoquiros.bl.dao.pais.Pais;
-import com.eduardoquiros.bl.dao.tripulacion.Tripulacion;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,6 +14,6 @@ public interface ITripulanteDao {
 	void modificar(String cedula, String nombre, String apellido1, String apellido2, String email, String direccion,
 	               LocalDate fechaNacimiento, Pais nacionalidad,char genero,String numLicencia,String puesto,String telefono,
 	               LocalDate fechaGraduacion, String codigoTripulacion) throws Exception;
-	Tripulacion buscarPorCodigo(String codigo) throws Exception;
+	Tripulante buscarPorCodigo(String codigo) throws Exception;
 	ArrayList<Tripulante> getTripulantesPorTripulacion(String codigoTripulacion) throws Exception;
 }

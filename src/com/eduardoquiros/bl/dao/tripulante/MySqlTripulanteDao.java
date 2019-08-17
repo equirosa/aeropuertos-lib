@@ -3,7 +3,6 @@ package com.eduardoquiros.bl.dao.tripulante;
 import com.eduardoquiros.accesodatos.Conector;
 import com.eduardoquiros.bl.dao.pais.MySqlPaisDao;
 import com.eduardoquiros.bl.dao.pais.Pais;
-import com.eduardoquiros.bl.dao.tripulacion.Tripulacion;
 
 import java.sql.ResultSet;
 import java.time.LocalDate;
@@ -34,6 +33,7 @@ public class MySqlTripulanteDao implements ITripulanteDao{
 			tripulantes.add(new Tripulante(rs.getString("nombre"),rs.getString("apellido1"),
 					rs.getString("apellido2"),rs.getString("cedula"),rs.getString("email"),
 					rs.getString("direccion"),paisDao.buscarPorCodigo(rs.getString("nacionalidad")),
+					rs.getString("genero").charAt(0),
 					LocalDate.parse(rs.getString("nacionalidad")),rs.getInt("annos_experiencia"),
 					rs.getString("num_licencia"),rs.getString("puesto"),rs.getString("telefono"),
 					LocalDate.parse(rs.getString("fecha_graduacion"))));
@@ -52,16 +52,60 @@ public class MySqlTripulanteDao implements ITripulanteDao{
 	                      LocalDate fechaGraduacion, String codigoTripulacion) throws Exception {
 	Conector.getConector().ejecutarSql("update tripulantes set nombre='"+nombre+"',apellido1='"+apellido1+
 			"',apellido2='"+apellido2+"',email='"+email+"',direccion='"+direccion+"',fecha_nacimiento="+fechaNacimiento+
-			",nacionalidad='"+nacionalidad.getCodigo()+"',");
+			",nacionalidad='"+nacionalidad.getCodigo()+"',genero='"+genero+"',num_licencia='"+numLicencia+"',puesto='"+puesto+
+			"',telefono='"+telefono+"',fecha_graduacion="+fechaGraduacion+",tripulacion='"+codigoTripulacion+"',annos_experiencia="+
+			Period.between(fechaGraduacion,LocalDate.now()).getYears()+");");
 	}
 	
 	@Override
-	public Tripulacion buscarPorCodigo(String codigo) throws Exception {
-		return null;
+	public Tripulante buscarPorCodigo(String codigo) throws Exception {
+		ResultSet rs = Conector.getConector().ejecutarQuery("select cedula,nombre,apellido1,apellido2,email,direccion," +
+				"fecha_nacimiento,nacionalidad,genero,annos_experiencia,num_licencia,puesto,telefono,fecha_graduacion" +
+				" from tripulantes where cedula='"+codigo+"';");
+		Tripulante tmpTripulante = new Tripulante();
+		while (rs.next()) {
+			tmpTripulante.setCedula(rs.getString("cedula"));
+			tmpTripulante.setNombre(rs.getString("nombre"));
+			tmpTripulante.setApellido1(rs.getString("apellido1"));
+			tmpTripulante.setApellido2(rs.getString("apellido2"));
+			tmpTripulante.setEmail(rs.getString("email"));
+			tmpTripulante.setDireccion(rs.getString("direccion"));
+			tmpTripulante.setFechaNacimiento(LocalDate.parse(rs.getString("fecha_nacimiento")));
+			tmpTripulante.setNacionalidad(paisDao.buscarPorCodigo(rs.getString("nacionalidad")));
+			tmpTripulante.setGenero(rs.getString("genero").charAt(0));
+			tmpTripulante.setAnnosExp(rs.getInt("annos_experiencia"));
+			tmpTripulante.setNumLicencia(rs.getString("num_licencia"));
+			tmpTripulante.setPuesto(rs.getString("puesto"));
+			tmpTripulante.setTelefono(rs.getString("telefono"));
+			tmpTripulante.setFechaGraduacion(LocalDate.parse(rs.getString("fecha_graduacion")));
+		}
+		return tmpTripulante;
 	}
 	
 	@Override
 	public ArrayList<Tripulante> getTripulantesPorTripulacion(String codigoTripulacion) throws Exception {
-		return null;
+		ResultSet rs = Conector.getConector().ejecutarQuery("select cedula,nombre,apellido1,apellido2,email,direccion," +
+				"fecha_nacimiento,nacionalidad,genero,annos_experiencia,num_licencia,puesto,telefono,fecha_graduacion" +
+				" from tripulantes where tripulacion='"+codigoTripulacion+"';");
+		Tripulante tmpTripulante = new Tripulante();
+		ArrayList<Tripulante> tripulantes = new ArrayList<>();
+		while (rs.next()) {
+			tmpTripulante.setCedula(rs.getString("cedula"));
+			tmpTripulante.setNombre(rs.getString("nombre"));
+			tmpTripulante.setApellido1(rs.getString("apellido1"));
+			tmpTripulante.setApellido2(rs.getString("apellido2"));
+			tmpTripulante.setEmail(rs.getString("email"));
+			tmpTripulante.setDireccion(rs.getString("direccion"));
+			tmpTripulante.setFechaNacimiento(LocalDate.parse(rs.getString("fecha_nacimiento")));
+			tmpTripulante.setNacionalidad(paisDao.buscarPorCodigo(rs.getString("nacionalidad")));
+			tmpTripulante.setGenero(rs.getString("genero").charAt(0));
+			tmpTripulante.setAnnosExp(rs.getInt("annos_experiencia"));
+			tmpTripulante.setNumLicencia(rs.getString("num_licencia"));
+			tmpTripulante.setPuesto(rs.getString("puesto"));
+			tmpTripulante.setTelefono(rs.getString("telefono"));
+			tmpTripulante.setFechaGraduacion(LocalDate.parse(rs.getString("fecha_graduacion")));
+			tripulantes.add(tmpTripulante);
+		}
+		return tripulantes;
 	}
 }
