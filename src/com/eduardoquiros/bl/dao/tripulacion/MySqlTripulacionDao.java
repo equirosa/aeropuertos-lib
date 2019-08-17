@@ -22,6 +22,7 @@ public class MySqlTripulacionDao implements ITripulacionDao{
 			tripulaciones.add(new Tripulacion(rs.getString("codigo"),rs.getString("nombre"),
 					daoTripulante.getTripulantesPorTripulacion(rs.getString("codigo"))));
 		}
+		return tripulaciones;
 	}
 	
 	@Override
