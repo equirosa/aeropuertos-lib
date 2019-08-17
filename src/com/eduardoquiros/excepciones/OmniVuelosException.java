@@ -23,6 +23,8 @@ public class OmniVuelosException extends Exception{
 			case 1062: return Mensajes.MNSJ_REG_REPETIDO;
 			case 1064: return Mensajes.MNSJ_MALA_SINTAXIS;
 			case 1146: return Mensajes.MNSJ_TABLA_MALA;
+			case 1364: return Mensajes.MNSJ_ATRIBUTO_NULO;
+			case 1406: return Mensajes.MNSJ_DEMASIADO_LARGO;
 			case 2006: return Mensajes.MNSJ_SERVIDOR_CAIDO;
 		}
 	}
