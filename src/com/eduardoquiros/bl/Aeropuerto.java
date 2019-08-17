@@ -11,7 +11,15 @@ public class Aeropuerto {
     private Pais lugar;
     private Admin supervisor;
     private ArrayList<Ubicacion> ubicaciones;
-
+    
+    public Aeropuerto(String codigo, String nombre, Pais lugar, Admin supervisor, ArrayList<Ubicacion> ubicaciones) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.lugar = lugar;
+        this.supervisor = supervisor;
+        this.ubicaciones = ubicaciones;
+    }
+    
     public Aeropuerto(String codigo, String nombre, Pais lugar, Admin supervisor) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -51,7 +59,15 @@ public class Aeropuerto {
     public void setSupervisor(Admin supervisor) {
         this.supervisor = supervisor;
     }
-
+    
+    public ArrayList<Ubicacion> getUbicaciones() {
+        return ubicaciones;
+    }
+    
+    public void setUbicaciones(ArrayList<Ubicacion> ubicaciones) {
+        this.ubicaciones = ubicaciones;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
