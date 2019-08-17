@@ -21,7 +21,8 @@ public class MySqlUbicacionDao implements IUbicacionDao{
 		String queryText = "select codigo,codigo_aeropuerto,nombre from articulo";
 		ResultSet rs = Conector.getConector().ejecutarQuery(queryText);
 		while (rs.next()) {
-			Ubicacion tmpUbicacion = new Ubicacion(rs.getString("codigo"),rs.getString("codigo_aeropuerto"),rs.getString("nombre"));
+			Ubicacion tmpUbicacion = new Ubicacion(rs.getString("codigo"),rs.getString("nombre"),
+					puertaDao.getPuertasPorUbicacion(rs.getNString("codigo")));
 			ubicaciones.add(tmpUbicacion);
 		}
 		return ubicaciones;
