@@ -9,12 +9,13 @@ public class Tripulante extends Persona {
     private int annosExp;
     private String numLicencia, puesto, telefono;
     private LocalDate fechaGraduacion;
+    private char genero;
 
     public Tripulante() {
     }
 
     public Tripulante(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-                      Pais nacionalidad, LocalDate fechaNacimiento, int annosExp, String numLicencia,
+                      Pais nacionalidad,char genero, LocalDate fechaNacimiento, int annosExp, String numLicencia,
                       String puesto, String telefono, LocalDate fechaGraduacion) {
         super(nombre, apellido1, apellido2, cedula, email, direccion, nacionalidad, fechaNacimiento);
         this.annosExp = annosExp;
@@ -22,8 +23,17 @@ public class Tripulante extends Persona {
         this.puesto = puesto;
         this.telefono = telefono;
         this.fechaGraduacion = fechaGraduacion;
+        this.genero = genero;
     }
-
+    
+    public char getGenero() {
+        return genero;
+    }
+    
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+    
     public int getAnnosExp() {
         return annosExp;
     }
@@ -63,7 +73,7 @@ public class Tripulante extends Persona {
     public void setFechaGraduacion(LocalDate fechaGraduacion) {
         this.fechaGraduacion = fechaGraduacion;
     }
-
+    
     @Override
     public String toString() {
         return "Tripulante{" +
@@ -72,6 +82,7 @@ public class Tripulante extends Persona {
                 ", puesto='" + puesto + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", fechaGraduacion=" + fechaGraduacion +
+                ", genero=" + genero +
                 "} " + super.toString();
     }
 }
