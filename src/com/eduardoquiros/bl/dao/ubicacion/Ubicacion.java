@@ -1,5 +1,7 @@
 package com.eduardoquiros.bl.dao.ubicacion;
 
+import com.eduardoquiros.bl.dao.puerta.Puerta;
+
 import java.util.ArrayList;
 
 public class Ubicacion {
