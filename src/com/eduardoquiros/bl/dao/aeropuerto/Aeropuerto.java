@@ -12,6 +12,9 @@ public class Aeropuerto {
     private Admin supervisor;
     private ArrayList<Ubicacion> ubicaciones;
     
+    public Aeropuerto() {
+    }
+    
     public Aeropuerto(String codigo, String nombre, Pais lugar, Admin supervisor, ArrayList<Ubicacion> ubicaciones) {
         this.codigo = codigo;
         this.nombre = nombre;
