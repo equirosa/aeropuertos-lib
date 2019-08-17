@@ -1,8 +1,8 @@
 package com.eduardoquiros.bl.dao.tripulacion;
 
 import com.eduardoquiros.accesodatos.Conector;
+import com.eduardoquiros.bl.dao.tripulante.MySqlTripulanteDao;
 
-import java.lang.reflect.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class MySqlTripulacionDao implements ITripulacionDao{
 		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,nombre from tripulaciones");
 		while (rs.next()) {
 			tripulaciones.add(new Tripulacion(rs.getString("codigo"),rs.getString("nombre"),
-					daoTripulante.buscarPorTripulacion(rs.getString("codigo"))));
+					daoTripulante.getTripulantesPorTripulacion(rs.getString("codigo"))));
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class MySqlTripulacionDao implements ITripulacionDao{
 		while (rs.next()) {
 			tmpTripulacion.setCodigo(rs.getString("codigo"));
 			tmpTripulacion.setNombre("nombre");
-			tmpTripulacion.setTripulantes(daoTripulante.buscarPorTripulacion(rs.getString("codigo")));
+			tmpTripulacion.setTripulantes(daoTripulante.getTripulantesPorTripulacion(rs.getString("codigo")));
 		}
 		return tmpTripulacion;
 	}
