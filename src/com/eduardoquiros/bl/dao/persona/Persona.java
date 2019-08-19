@@ -1,4 +1,4 @@
-package com.eduardoquiros.bl;
+package com.eduardoquiros.bl.dao.persona;
 
 import com.eduardoquiros.bl.dao.pais.Pais;
 

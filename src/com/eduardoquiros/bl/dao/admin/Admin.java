@@ -1,7 +1,7 @@
 package com.eduardoquiros.bl.dao.admin;
 
 import com.eduardoquiros.bl.dao.pais.Pais;
-import com.eduardoquiros.bl.Persona;
+import com.eduardoquiros.bl.dao.persona.Persona;
 
 import java.time.LocalDate;
 import java.time.Period;
