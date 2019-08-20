@@ -8,4 +8,5 @@ public class ControladorLogin {
 	public boolean isNotLoggedIn() {
 		return (usuarioLogged==null);
 	}
+	
 }

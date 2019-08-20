@@ -88,4 +88,13 @@ public class ControladorAdmin {
 		}
 		return lista;
 	}
+	
+	public boolean noAdmins() {
+		try {
+			return daoObject.noAdmins();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

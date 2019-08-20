@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AeropuertosLib:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AeropuertosLib_jar</output-path>
+    <root id="archive" name="AeropuertosLib.jar">
+      <element id="module-output" name="AeropuertosLib" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../bibliotecas/mysql-connector-java-11.0.15.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
