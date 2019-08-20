@@ -1,7 +1,6 @@
 package com.eduardoquiros.tl;
 
 import com.eduardoquiros.bl.dao.admin.MySqlAdminDao;
-import com.eduardoquiros.excepciones.OmniVuelosException;
 
 import java.sql.SQLException;
 
@@ -12,7 +11,7 @@ private MySqlAdminDao adminDao;
 		try {
 			return adminDao.getAdmins().equals(null);
 		} catch (SQLException e) {
-			return new OmniVuelosException(e.getErrorCode()).numeroToString();
+			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

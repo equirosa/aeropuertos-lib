@@ -20,7 +20,7 @@ public class MySqlAeropuertoDao implements IAeropuertoDao{
 	}
 	
 	@Override
-	public ArrayList<Aeropuerto> getAdmins() throws Exception {
+	public ArrayList<Aeropuerto> getAeropuertos() throws Exception {
 		ArrayList<Aeropuerto> aeropuertos = new ArrayList<>();
 		ResultSet rs = Conector.getConector().ejecutarQuery("select codigo,nombre,nacionalidad,admin");
 		while (rs.next()) {
