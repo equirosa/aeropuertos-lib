@@ -21,7 +21,7 @@ public class MySqlUsuarioDao implements IUsuarioDao {
 	}
 	
 	@Override
-	public ArrayList<Usuario> getAdmins() throws Exception {
+	public ArrayList<Usuario> getUsuarios() throws Exception {
 		ArrayList<Usuario> usuarios = new ArrayList<>();
 		ResultSet rs = Conector.getConector().ejecutarQuery("select nombre,apellido1,apellido2,cedula,email,direccion," +
 				"nacionalidad,fecha_nacimiento,edad;");

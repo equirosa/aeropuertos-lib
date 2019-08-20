@@ -1,20 +1,11 @@
 package com.eduardoquiros.tl;
 
-import com.eduardoquiros.bl.dao.admin.MySqlAdminDao;
-
-import java.sql.SQLException;
+import com.eduardoquiros.bl.dao.persona.Persona;
 
 public class ControladorLogin {
-private MySqlAdminDao adminDao;
-
-	public boolean checkAdmins(){
-		try {
-			return adminDao.getAdmins().equals(null);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
+	private Persona usuarioLogged = null;
+	
+	public boolean isNotLoggedIn() {
+		return (usuarioLogged==null);
 	}
 }

@@ -1,17 +1,15 @@
 import com.eduardoquiros.tl.ControladorAdmin;
+import com.eduardoquiros.tl.ControladorLogin;
 import com.eduardoquiros.tl.ControladorPais;
 
+import static java.lang.System.out;
+
 public class Main {
+	public static ControladorLogin gestorLogin = new ControladorLogin();
 	public static ControladorPais gestorPais = new ControladorPais();
 	public static ControladorAdmin gestorAdmin = new ControladorAdmin();
 	
 	public static void main(String[] args){
-		System.out.println(gestorPais.insertar("123","Costa Rica","CRC"));
-		System.out.println(gestorPais.insertar("456","Panama","PAN"));
-		System.out.println(gestorPais.insertar("789","Nicaragua","NIC"));
-		String[] lista = gestorPais.getPaises();
-		for(String data:lista){
-			System.out.println(data);
-		}
+		out.println(gestorLogin.isNotLoggedIn());
 	}
 }
