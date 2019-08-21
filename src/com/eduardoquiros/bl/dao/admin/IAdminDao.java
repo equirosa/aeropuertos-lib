@@ -55,7 +55,7 @@ public interface IAdminDao {
 	 * @param edad Es la edad del Admin.
 	 * @throws SQLException Puede haber errores al interactuar con la base de datos.
 	 */
-	void modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws SQLException;
+	void modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws SQLException, Exception;
 	
 	/**
 	 *
@@ -63,12 +63,12 @@ public interface IAdminDao {
 	 * @return Retorna un singular Admin cuya cedula coincida con el parametro.
 	 * @throws SQLException Puede haber errores al interactuar con la base de datos.
 	 */
-	Admin buscarPorCodigo(String codigo) throws SQLException;
+	Admin buscarPorCodigo(String codigo) throws SQLException, Exception;
 	
 	/**
 	 *
 	 * @return Retorna un valor correspondiente con la existencia o ausencia de Admins(no hay admins = true).
 	 * @throws SQLException Puede haber errores al interactuar con la base de datos.
 	 */
-	boolean noAdmins() throws SQLException;
+	boolean noAdmins() throws SQLException, Exception;
 }
