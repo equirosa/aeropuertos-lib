@@ -34,7 +34,7 @@ public class MySqlPaisDao implements IPaisDao{
 	@Override
 	public Pais buscarPorCodigo(String codigo) throws Exception {
 		Pais tmpPais = new Pais();
-		ResultSet rs =Conector.getConector().ejecutarQuery("select codigo,nombre,abreviatura from pais where codigo='"+codigo+"';");
+		ResultSet rs =Conector.getConector().ejecutarQuery("select codigo,nombre,abreviatura from paises where codigo='"+codigo+"';");
 		while (rs.next()) {
 			tmpPais = new Pais(rs.getString("codigo"), rs.getString("nombre"), rs.getString("abreviatura"));
 		}

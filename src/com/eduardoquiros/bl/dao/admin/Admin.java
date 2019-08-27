@@ -28,8 +28,8 @@ public class Admin extends Persona {
 	 * @param edad
 	 * @param genero
 	 */
-	public Admin(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, int edad, char genero) {
-		super(nombre, apellido1, apellido2, cedula, email, direccion, nacionalidad, fechaNacimiento);
+	public Admin(String nombre, String apellido1, String apellido2, String cedula, String email,String contrasenna, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, int edad, char genero) {
+		super(nombre, apellido1, apellido2, cedula, email,contrasenna, direccion, nacionalidad, fechaNacimiento);
 		this.edad = edad;
 		this.genero = genero;
 	}
@@ -38,25 +38,6 @@ public class Admin extends Persona {
 	 * Constructor por defecto de Admin.
 	 */
 	public Admin() {
-	}
-	
-	/**
-	 * Constructor semicargado de Admin que calcula automaticamente el valor del campo edad.
-	 * @param nombre
-	 * @param apellido1
-	 * @param apellido2
-	 * @param cedula
-	 * @param email
-	 * @param direccion
-	 * @param nacionalidad
-	 * @param fechaNacimiento
-	 * @param genero
-	 */
-	public Admin(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	             Pais nacionalidad, LocalDate fechaNacimiento, char genero) {
-		super(nombre, apellido1, apellido2, cedula, email, direccion, nacionalidad, fechaNacimiento);
-		calcularEdad(fechaNacimiento);
-		this.genero = genero;
 	}
 	
 	/**

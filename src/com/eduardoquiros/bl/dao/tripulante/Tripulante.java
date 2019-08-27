@@ -14,10 +14,10 @@ public class Tripulante extends Persona {
 	public Tripulante() {
 	}
 	
-	public Tripulante(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
+	public Tripulante(String nombre, String apellido1, String apellido2, String cedula, String email,String contrasenna, String direccion,
 	                  Pais nacionalidad,char genero, LocalDate fechaNacimiento, int annosExp, String numLicencia,
 	                  String puesto, String telefono, LocalDate fechaGraduacion) {
-		super(nombre, apellido1, apellido2, cedula, email, direccion, nacionalidad, fechaNacimiento);
+		super(nombre, apellido1, apellido2, cedula, email,contrasenna, direccion, nacionalidad, fechaNacimiento);
 		this.annosExp = annosExp;
 		this.numLicencia = numLicencia;
 		this.puesto = puesto;

@@ -5,23 +5,32 @@ import com.eduardoquiros.bl.dao.pais.Pais;
 import java.time.LocalDate;
 
 public class Persona {
-	protected String nombre, apellido1, apellido2, cedula,email, direccion;
+	protected String nombre, apellido1, apellido2, cedula,email, direccion, contrasenna;
 	protected Pais nacionalidad;
 	protected LocalDate fechaNacimiento;
 	
 	public Persona() {
 	}
 	
-	public Persona(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	               Pais nacionalidad, LocalDate fechaNacimiento) {
+	public Persona(String nombre, String apellido1, String apellido2, String cedula, String email,String contrasenna,
+	               String direccion, Pais nacionalidad, LocalDate fechaNacimiento) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.cedula = cedula;
 		this.email = email;
+		this.contrasenna = contrasenna;
 		this.direccion = direccion;
 		this.nacionalidad = nacionalidad;
 		this.fechaNacimiento = fechaNacimiento;
+	}
+	
+	public String getContrasenna() {
+		return contrasenna;
+	}
+	
+	public void setContrasenna(String contrasenna) {
+		this.contrasenna = contrasenna;
 	}
 	
 	public String getNombre() {

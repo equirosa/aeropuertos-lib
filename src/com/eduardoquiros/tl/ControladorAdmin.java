@@ -4,10 +4,7 @@ import com.eduardoquiros.bl.dao.admin.Admin;
 import com.eduardoquiros.bl.dao.admin.IAdminDao;
 import com.eduardoquiros.bl.dao.factory.DaoFactory;
 import com.eduardoquiros.bl.dao.pais.IPaisDao;
-import com.eduardoquiros.excepciones.OmniVuelosException;
-import com.eduardoquiros.utils.Mensajes;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
@@ -22,64 +19,30 @@ public class ControladorAdmin {
 		daoPais = factory.getPaisDao();
 	}
 	
-	public String insertar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	                       String nacionalidad, LocalDate fechaNacimiento, char genero){
-		try {
-			daoObject.insertar(nombre,apellido1,apellido2,cedula,email,direccion,daoPais.buscarPorCodigo(nacionalidad),fechaNacimiento,
+	public void insertar(String nombre, String apellido1, String apellido2, String cedula, String email,String contrasenna, String direccion,
+	                     String nacionalidad, LocalDate fechaNacimiento, char genero) throws Exception {
+			daoObject.insertar(nombre,apellido1,apellido2,cedula,email,contrasenna,direccion,daoPais.buscarPorCodigo(nacionalidad)
+					,fechaNacimiento,
 					genero, Period.between(fechaNacimiento,LocalDate.now()).getYears());
-		} catch (SQLException e) {
-			return new OmniVuelosException(e.getErrorCode()).numeroToString();
-		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage()).numeroToString();
-		}
-		return Mensajes.MNSJ_EXITO;
 	}
 	
-	public String buscarPorCodigo(String cedula){
-		try {
+	public String buscarPorCodigo(String cedula) throws Exception {
 			return daoObject.buscarPorCodigo(cedula).toString();
-		} catch (SQLException e) {
-			return new OmniVuelosException(e.getErrorCode()).numeroToString();
-		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage()).numeroToString();
-		}
 	}
 	
-	public String eliminar(String cedula){
-		try{
+	public void eliminar(String cedula) throws Exception {
 			daoObject.eliminar(cedula);
-		}catch (SQLException e){
-			return new OmniVuelosException(e.getErrorCode()).numeroToString();
-		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage()).numeroToString();
-		}
-		return Mensajes.MNSJ_EXITO;
 	}
 	
-	public String modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
-	                        String nacionalidad, LocalDate fechaNacimiento, char genero){
-		try {
+	public void modificar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion,
+	                        String nacionalidad, LocalDate fechaNacimiento, char genero) throws Exception {
 			daoObject.modificar(nombre,apellido1,apellido2,cedula,email,direccion,daoPais.buscarPorCodigo(nacionalidad),
 					fechaNacimiento,genero,Period.between(fechaNacimiento,LocalDate.now()).getYears());
-		} catch (SQLException e) {
-			return new OmniVuelosException(e.getErrorCode()).numeroToString();
-		} catch (Exception e) {
-			return new OmniVuelosException(e.getMessage()).numeroToString();
-		}
-		return Mensajes.MNSJ_EXITO;
 	}
-	public String[] listar(){
-		String[] lista = new String[1];
+	public String[] listar() throws Exception {
+		String[] lista;
 		ArrayList<Admin> admins;
-		try{
 			admins = daoObject.getAdmins();
-		}catch (SQLException e){
-			lista[0] = new OmniVuelosException(e.getErrorCode()).numeroToString();
-			return lista;
-		} catch (Exception e) {
-			lista[0] = new OmniVuelosException(e.getMessage()).numeroToString();
-			return lista;
-		}
 		lista = new String[admins.size()];
 		int posicion = 0;
 		for(Admin tmpAdmin : admins){
@@ -89,12 +52,7 @@ public class ControladorAdmin {
 		return lista;
 	}
 	
-	public boolean noAdmins() {
-		try {
-			return daoObject.noAdmins();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
+	public boolean noAdmins() throws Exception {
+		return daoObject.noAdmins();
 	}
 }

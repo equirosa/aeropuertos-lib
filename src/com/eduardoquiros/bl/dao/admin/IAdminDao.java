@@ -26,7 +26,7 @@ public interface IAdminDao {
 	 * @param edad
 	 * @throws Exception
 	 */
-	void insertar(String nombre, String apellido1, String apellido2, String cedula, String email, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws Exception;
+	void insertar(String nombre, String apellido1, String apellido2, String cedula, String email,String contrasenna, String direccion, Pais nacionalidad, LocalDate fechaNacimiento, char genero,int edad) throws Exception;
 	
 	/**
 	 * @return Retorna un arraylist de Admins.
